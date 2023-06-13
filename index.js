@@ -15,7 +15,6 @@ const fetchdata = async (target)=>{
         const response = await fetch(url)
         const data = await response.json()
 
-        console.log(data)
         updateDom(data.current.temp_c, data.location.name, data.location.localtime, data.current.condition.icon, data.current.condition.text)
     } catch (error) {
         alert("Spelling Mistake")
@@ -36,7 +35,6 @@ const search = (e)=>{
     e.preventDefault()
 
     target = searchField.value
-    console.log(target)
     fetchdata(target)
 }
 
